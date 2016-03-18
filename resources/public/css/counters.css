@@ -1,0 +1,6 @@
+.counters {
+    display: inline-block;
+    float: left;
+    width: 30%;
+    height: 100%;
+}

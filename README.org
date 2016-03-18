@@ -1,0 +1,44 @@
+#+TITLE: om-next-counters-example
+
+A minimal [[https://github.com/omcljs/om][Om.next]] example.
+
+Check out the Om.next section of the [[https://github.com/omcljs/om/wiki][Om wiki]] for more information on Om.next.
+
+* Usage
+
+  All you need to do is start the figwheel build server and repl.
+
+** from the shell
+
+   This will start the figwheel server and open your browser to localhost:3449
+
+   #+BEGIN_SRC shell
+     lein figwheel  # this is a lein alias in project.clj
+   #+END_SRC
+
+
+* License
+
+#+BEGIN_EXAMPLE
+The MIT License (MIT)
+
+Copyright (c) 2016 Jedidiah T Clinger
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+#+END_EXAMPLE
