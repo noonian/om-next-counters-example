@@ -2,7 +2,7 @@
 
 A minimal [[https://github.com/omcljs/om][Om.next]] example.
 
-Check out the Om.next section of the [[https://github.com/omcljs/om/wiki][Om wiki]] for more information on Om.next.
+Check out the Om.next section of the [[https://github.com/omcljs/om/wiki#om-next][Om wiki]] for more information on Om.next.
 
 * Usage
 
