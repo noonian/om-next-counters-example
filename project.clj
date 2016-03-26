@@ -7,7 +7,7 @@
             :key "mit"}
   :min-lein-version "2.5.3"
   :dependencies [[org.clojure/clojure "1.8.0"]
-                 [org.clojure/clojurescript "1.7.228"]
+                 [org.clojure/clojurescript "1.8.34"]
                  [org.clojure/core.async "0.2.374"
                   :exclusions [org.clojure/tools.reader]]
                  [sablono "0.6.2"]
@@ -17,7 +17,7 @@
                    :dependencies [[com.cemerick/piggieback "0.2.1"]
                                   [figwheel-sidecar "0.5.0-6"]
                                   [devcards "0.2.1"]]
-                   :plugins [[lein-cljsbuild "1.1.2"
+                   :plugins [[lein-cljsbuild "1.1.3"
                               :exclusions [[org.clojure/clojure]]]]}}
   :repl-options {:nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
   :aliases {"figwheel" ["run" "-m" "clojure.main/main" "bin/figwheel.clj"]}
@@ -31,5 +31,11 @@
                            :asset-path "js/compiled/out"
                            :output-to "resources/public/js/compiled/counters.js"
                            :output-dir "resources/public/js/compiled/out"
-                           :source-map-timestamp true}}]}
+                           :source-map-timestamp true}}
+               {:id "min"
+                :source-paths ["src/main"]
+                :compiler {:main counters.core
+                           :output-to "resources/public/js/compiled/counters.min.js"
+                           :optimizations :advanced
+                           :pretty-print false}}]}
   :figwheel {:css-dirs ["resources/public/css"]})
