@@ -1,5 +1,6 @@
 (ns counters.parser
   (:require [om.next :as om]
+            [om.util :as om-util]
             [counters.ui.counter :as counter]
             [cljs.pprint :refer [pprint]])
   (:refer-clojure :exclude [read]))
@@ -18,10 +19,10 @@
         val-or-ident (get st key)
         val (cond
 
-              (om/ident? val-or-ident)
+              (om-util/ident? val-or-ident)
               (om/db->tree query (get-in st val-or-ident) st)
 
-              (and (vector? val-or-ident) (every? om/ident? val-or-ident))
+              (and (vector? val-or-ident) (every? om-util/ident? val-or-ident))
               (mapv  #(om/db->tree query (get-in st %) st) val-or-ident)
 
               :else (denorm val-or-ident))]

@@ -14,16 +14,10 @@
    :other/counters (mapv counter/make-counter (range 5))})
 
 (defonce
-  ^{:doc "The state of the application at any given time."}
-  app-state
-  (atom initial-state))
-
-(defonce
   ^{:doc "Contains bookkeeping and configuration for Om."}
   reconciler
   (om/reconciler
-   {:state app-state
-    :normalize true
+   {:state initial-state
     :parser parser/parser}))
 
 (defn mount-root-view!
