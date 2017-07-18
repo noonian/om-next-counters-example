@@ -38,9 +38,7 @@
         sorted-counters (into [] (sort-by :count counters))]
     {:value sorted-counters}))
 
-;; add ident to the list
-;; add normalized data to the table
-(def last-id (atom 0))
+(defonce last-id (atom 0))
 
 (defmethod mutate 'counter/add!
   [{:keys [state]} key params]
@@ -55,11 +53,11 @@
               (assoc-in [:counter/by-id id] counter))))}))
 
 (defmethod mutate 'counter/inc!
-  [{:keys [state]} key {:keys [counter]}]
+  [{:keys [state]} key {:keys [id]}]
   {:action
-   #(swap! state update-in (conj counter :count) inc)})
+   #(swap! state update-in [:counter/by-id id :count] inc)})
 
 (defmethod mutate 'counter/reset!
-  [{:keys [state]} key {:keys [counter]}]
+  [{:keys [state]} key {:keys [id]}]
   {:action
-   #(swap! state assoc-in (conj counter :count) 0)})
+   #(swap! state assoc-in [:counter/by-id id :count] 0)})
