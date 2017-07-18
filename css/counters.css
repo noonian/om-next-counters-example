@@ -1,0 +1,23 @@
+.counters {
+    display: inline-block;
+    float: left;
+    width: 30%;
+    height: 100%;
+}
+
+.counters header {
+    min-height: 200px;
+}
+
+.counter {
+    color: linen;
+    padding: 20px;
+}
+
+.color-0 { background-color: #FF4848; }
+.color-1 { background-color: #FF9100; }
+.color-2 { background-color: #FF0000; }
+.color-3 { background-color: #00CC9A; }
+.color-4 { background-color: #003FFF; }
+.color-5 { background-color: #7143F3; }
+.color-6 { background-color: #DE61DE; }
