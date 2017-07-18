@@ -27,16 +27,16 @@
         [:div.counters
          [:header
           [:h3 ":global/counter"]
-          "These counters are backed by the same data"]
+          "Both of the counters in this column are backed by the same data."]
          [:div (render-counter counter)]
          [:div (render-counter counter)]]
         [:div.counters
          [:header
           [:h3 ":other/counters"]
-          "The order of these counters will remain constant"]
+          "The order of the counters in this column will remain constant."]
          (map render-counter counters)]
         [:div.counters
          [:header
           [:h3 ":sorter/counters"]
-          "These counters will be ordered by the value of their count"]
+          "The counters in this column will be ordered by the value of their count. This is confusing when you are incrementing so I recommend using the controls in the static list in the second column."]
          (map render-counter (:sorted/counters props))]]))))

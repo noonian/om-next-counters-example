@@ -14,6 +14,10 @@
   [c id]
   (om/transact! c `[(counter/reset! ~{:id id})]))
 
+(defn color-class [id]
+  (let [n (if (number? id) id 5)] ;hack to color global/counter differently
+    (str "color-" (mod n 6))))
+
 (defui Counter
   static om/Ident
   (ident [this props]
@@ -31,7 +35,8 @@
           ;; changes.
           target (or target this)]
       (html
-       [:div.counter
+       [:div.counter {:class (color-class id)}
+        [:h4 "Counter id: " (str id)]
         [:h2 "The current count is: " count "."]
         [:button {:on-click #(inc-counter! target id)} "Increment it!"]
         [:button {:on-click #(reset-counter! target id)} "Reset"]]))))
